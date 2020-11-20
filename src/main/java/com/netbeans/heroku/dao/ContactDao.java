@@ -82,6 +82,11 @@ public class ContactDao {
             System.out.println("Java JDBC PostgreSQL Example2");
             Class.forName("org.postgresql.Driver");
             System.out.println("Java JDBC PostgreSQL Example");
+            // for heroku postgres
+            JDBC_DATABASE_URL = System.getenv("JDBC_DATABASE_URL");
+            JDBC_DATABASE_USERNAME = System.getenv("JDBC_DATABASE_USERNAME");
+            JDBC_DATABASE_PASSWORD = System.getenv("JDBC_DATABASE_PASSWORD");
+
             System.out.println(JDBC_DATABASE_URL + ',' + JDBC_DATABASE_USERNAME + ',' + JDBC_DATABASE_PASSWORD);
             Connection connection = DriverManager.getConnection(JDBC_DATABASE_URL, JDBC_DATABASE_USERNAME, JDBC_DATABASE_PASSWORD);
 
@@ -111,7 +116,7 @@ public class ContactDao {
             System.out.println(preparedStatement);
             result = preparedStatement.executeUpdate();
             System.out.println(result);
-        }  catch (ClassNotFoundException e) {
+        } catch (ClassNotFoundException e) {
             System.out.println("PostgreSQL JDBC driver not found.");
         } catch (SQLException e) {
             // process sql exception
