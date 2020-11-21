@@ -1,1 +1,1 @@
-heroku war:deploy */HerokuSalesforceWebApp-1.0-SNAPSHOT.war --app heroku-tomcat-java --port 8181 --webapp-runner 8.5.50.0
+web: java $JAVA_OPTS -jar target/dependency/webapp-runner.jar --port $PORT target/*.war
