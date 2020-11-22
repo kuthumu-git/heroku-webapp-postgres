@@ -81,7 +81,7 @@ public class ContactDao {
         try {
             System.out.println("Java JDBC PostgreSQL Example2");
             Class.forName("org.postgresql.Driver");
-            System.out.println("Java JDBC PostgreSQL Example3");
+            System.out.println("Java JDBC PostgreSQL Example");
             // for heroku postgres
             JDBC_DATABASE_URL = System.getenv("JDBC_DATABASE_URL");
             JDBC_DATABASE_USERNAME = System.getenv("JDBC_DATABASE_USERNAME");
